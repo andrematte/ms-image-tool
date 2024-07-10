@@ -33,7 +33,14 @@ theme:
       accent: lime
 
 plugins: 
-  - mkdocstrings
+  - mkdocstrings:
+      handlers:
+        python:
+          rendering:
+            show_source: true
+            show_category_heading: true
+            show_root_heading: true
+            show_root_toc_entry: true
   
 extra:
   social:
