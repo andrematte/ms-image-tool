@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "ms-image-tool"
+version = "0.1.0"
+description = "Tools for handling multispectral images and generating vegetation indices."
+authors = ["Andre Mattos <carlosandrematte@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
