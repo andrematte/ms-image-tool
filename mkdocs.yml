@@ -5,6 +5,7 @@ edit_uri: tree/main/docs
 
 theme: 
   name: material
+  language: en
   logo: assets/logo.png
   favicon: assets/logo.png
   features:
@@ -17,7 +18,6 @@ theme:
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
-  language: en
   palette:
     - scheme: default
       toggle:
