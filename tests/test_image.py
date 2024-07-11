@@ -21,6 +21,13 @@ class TestImage:
         """
         return Image("data/sample/sample-image.tif")
 
+    def test_invalid_file(self):
+        """
+        Tests that an error is raised when an invalid file is provided.
+        """
+        with pytest.raises(ValueError):
+            Image("data/sample/sample-image.jpg")
+
     def test_valid_file(self, image):
         """
         Tests that the sample image was loaded correctly.

@@ -1,5 +1,7 @@
 """
-Module containing the multispectral Image class.
+# ---------------------------------------------------------------------------- #
+#                           Multispectral Image Class                          #
+# ---------------------------------------------------------------------------- #
 """
 
 import numpy as np
@@ -28,19 +30,19 @@ class Image:
 
         """
         self.path = input_path
-        tensor = self.load_tiff(input_path)
+        tensor = self._load_tiff(input_path)
 
         self.height = tensor.shape[0]
         self.width = tensor.shape[1]
         self.shape = (self.height, self.width)
 
-        self.red = self.correct_bands(tensor[:, :, 0])
-        self.green = self.correct_bands(tensor[:, :, 1])
-        self.blue = self.correct_bands(tensor[:, :, 2])
-        self.rededge = self.correct_bands(tensor[:, :, 3])
-        self.nir = self.correct_bands(tensor[:, :, 4])
+        self.red = self._correct_bands(tensor[:, :, 0])
+        self.green = self._correct_bands(tensor[:, :, 1])
+        self.blue = self._correct_bands(tensor[:, :, 2])
+        self.rededge = self._correct_bands(tensor[:, :, 3])
+        self.nir = self._correct_bands(tensor[:, :, 4])
 
-    def load_tiff(self, input_path: str) -> np.ndarray:
+    def _load_tiff(self, input_path: str) -> np.ndarray:
         """
         Load an image from a .tiff file and return it as a numpy array.
 
@@ -55,7 +57,7 @@ class Image:
 
         return tifffile.imread(input_path)
 
-    def correct_bands(self, tensor: np.ndarray) -> np.ndarray:
+    def _correct_bands(self, tensor: np.ndarray) -> np.ndarray:
         """
         Correct values in the input tensor to be within the range of 0-1.
 
