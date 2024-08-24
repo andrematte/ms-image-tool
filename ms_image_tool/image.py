@@ -144,6 +144,22 @@ class Image:
             im_display[:, :, i] = self._normalize(array[:, :, i], im_min, im_max)
 
         return im_display
+    
+    def get_tensor(self):
+        """
+        Returns the image as a numpy array.
+
+        Returns:
+            tensor (np.ndarray): Image as a numpy array.
+        """
+        tensor = np.zeros((self.height, self.width, 5), dtype=np.float32)
+        tensor[:, :, 0] = self.red
+        tensor[:, :, 1] = self.green
+        tensor[:, :, 2] = self.blue
+        tensor[:, :, 3] = self.rededge
+        tensor[:, :, 4] = self.nir
+
+        return tensor
 
     def get_bgr(self):
         """
