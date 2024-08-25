@@ -50,8 +50,8 @@ class Image:
 
         if cutline_included:
             self.cutline = np.uint8(
-                (self.tensor[:, :, 5] - np.min(self.tensor[:, :, 5]))
-                / (np.max(self.tensor[:, :, 5]) - np.min(self.tensor[:, :, 5]))
+                (tensor[:, :, 5] - np.min(tensor[:, :, 5]))
+                / (np.max(tensor[:, :, 5]) - np.min(tensor[:, :, 5]))
             )
             self.cutline = self.cutline.astype(bool)
         else:
@@ -145,20 +145,28 @@ class Image:
 
         return im_display
     
-    def get_tensor(self):
+    def get_tensor(self, cutline: bool = False):
         """
         Returns the image as a numpy array.
 
         Returns:
             tensor (np.ndarray): Image as a numpy array.
         """
-        tensor = np.zeros((self.height, self.width, 5), dtype=np.float32)
+        
+        if cutline:
+            tensor = np.zeros((self.height, self.width, 6), dtype=np.float32)
+            tensor[:, :, 5] = self.cutline
+        else:
+            tensor = np.zeros((self.height, self.width, 5), dtype=np.float32)
+        
         tensor[:, :, 0] = self.red
         tensor[:, :, 1] = self.green
         tensor[:, :, 2] = self.blue
         tensor[:, :, 3] = self.rededge
         tensor[:, :, 4] = self.nir
 
+        
+            
         return tensor
 
     def get_bgr(self):
