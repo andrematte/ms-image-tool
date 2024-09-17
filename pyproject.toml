@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "ms-image-tool"
-version = "0.1.0"
+version = "1.0.0"
 description = "Tools for handling multispectral images and generating vegetation indices."
 authors = ["Andre Mattos <carlosandrematte@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.10"
 tifffile = "^2024.7.2"
 opencv-python = "^4.10.0.84"
 
