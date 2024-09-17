@@ -1,12 +1,29 @@
 ![logo](assets/logo.png){ width=300 .center }
+
 # Multispectral Image Tool
 
-Description...
+
+## Description 
+
+This python library contains tools to manipulate multispectral image files captured by the Micasense RedEdge-P sensor. 
+
+The input image file must be composed of six channels:
+
+1. Red band reflectance
+2. Green band reflectance
+3. Blue band reflectance
+4. Red Edge band reflectance
+5. Near-infrared band reflectance
+6. Binary cutline (optional)
 
 ## Installation
 
-Installation description...
+The library can be installed with `pip`.
 
-## Basic Usage
+```bash
+pip install ms-image-tool
+```
 
-Usage description...
+## License
+
+This project is licensed under the terms of `MIT License`.
