@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ms-image-tool"
-version = "1.0.0"
+version = "1.0.1"
 description = "Tools for handling multispectral images and generating vegetation indices."
 authors = ["Andre Mattos <carlosandrematte@gmail.com>"]
 readme = "README.md"
